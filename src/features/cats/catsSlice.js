@@ -38,6 +38,11 @@ const initialState = {
 
 function catsReducer(state = initialState, action) {
   switch (action.type) {
+
+    case "cats/fetchCats/pending":
+      // mutating state! nonono
+      state.status = "loading";
+      return state;
     // sync actions
     case "cats/catAdded":
       return {
